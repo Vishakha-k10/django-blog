@@ -23,6 +23,7 @@ def add_category(request):
         form=CategoryForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('categories')
     form=CategoryForm()
     context={
         'form':form
@@ -36,6 +37,7 @@ def edit_category(request,pk):
         form=CategoryForm(request.POST, instance=category)
         if form.is_valid():
             form.save()
+            return redirect('categories')
     context={
         'form':form,
         'category':category

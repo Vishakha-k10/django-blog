@@ -11,8 +11,8 @@
             Categories
         </a>
 
-        <a href="#"
-           class="nav-link text-dark">
+        <a href="{% url 'posts' %}"
+           class="nav-link text-dark {% if request.path == '/dashboard/posts/' %}bg-warning{% endif %}">
             Posts
         </a>
 
